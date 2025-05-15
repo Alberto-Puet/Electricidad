@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaBolt, FaCheckCircle } from "react-icons/fa";
 import Link from "next/link";
-import { useIsMobile } from "../../hoocks/useIsMobile"; // ajustá la ruta si es necesario
 
 const detalles = [
   "Reemplazo de bobinas quemadas o desgastadas",
@@ -14,34 +13,25 @@ const detalles = [
 ];
 
 export default function Bobinados() {
-  const isMobile = useIsMobile();
-
   return (
     <section
       className="relative -mt-18 bg-cover bg-bottom min-h-screen text-white overflow-hidden"
       style={{ backgroundImage: "url('/bobinados-bg.webp')" }}
     >
-      {/* Overlay responsivo */}
-      <motion.div
-        className="absolute inset-y-0 left-0 bg-black/70 h-full"
-        initial={{ width: 0 }}
-        whileInView={{ width: isMobile ? "100%" : "65%" }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        style={{ transformOrigin: "left" }}
-      />
+      {/* Overlay sin animación */}
+      <div className="absolute inset-0 bg-black/70 h-full w-full" />
 
-      {/* Contenido */}
+      {/* Contenido centrado */}
       <motion.div
-        className="absolute inset-y-0 left-0 z-10 w-full md:w-[60%] flex items-center justify-center px-6"
+        className="absolute inset-y-0 left-0 z-10 w-full flex items-center justify-center px-6"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        <div className="max-w-3xl w-full text-center md:text-left">
+        <div className="max-w-3xl w-full text-center flex flex-col items-center">
           <div className="mb-10">
-            <FaBolt className="text-[#f09f0a] text-5xl mb-4 mx-auto md:mx-0" />
+            <FaBolt className="text-[#f09f0a] text-5xl mb-4 mx-auto" />
             <h1 className="text-3xl md:text-4xl font-bold">Bobinados de Motores</h1>
             <p className="mt-4 text-slate-300 text-base md:text-lg">
               Bobinado y reparación de motores eléctricos.
@@ -52,15 +42,15 @@ export default function Bobinados() {
             {detalles.map((item, i) => (
               <li
                 key={i}
-                className="flex items-start gap-3 text-left w-full"
+                className="flex items-center gap-3 justify-start text-left w-full md:my-2 max-w-xs whitespace-nowrap overflow-hidden text-ellipsis"
               >
-                <FaCheckCircle className="text-[#f09f0a] mt-1 shrink-0" />
-                <span className="text-white leading-snug whitespace-normal">{item}</span>
+                <FaCheckCircle className="text-[#f09f0a] shrink-0 mt-0.5" />
+                <span className="text-white">{item}</span>
               </li>
             ))}
           </ul>
 
-          <div className="text-center md:text-left mt-10">
+          <div className="text-center mt-10">
             <Link
               target="_blank"
               href="https://wa.me/5493447448409?text=Hola%2C%20necesito%20bobinar%20un%20motor."
