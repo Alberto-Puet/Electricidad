@@ -46,12 +46,13 @@ export default function Bobinados() {
           <ul className="grid gap-5 justify-center sm:grid-cols-1 px-4 md:px-0 md:grid-cols-2 text-sm md:text-base">
             {detalles.map((item, i) => (
               <li
-                key={i}
-                className="flex sm:flex-row items-start justify-start sm:justify-start text-center sm:text-left gap-3 w-full"
-              >
-                <FaCheckCircle className="text-[#f09f0a] shrink-0 mt-0.5" />
-                <span className="text-white">{item}</span>
-              </li>
+  key={i}
+  className="flex items-start gap-3 text-left w-full"
+>
+  <FaCheckCircle className="text-[#f09f0a] mt-1 shrink-0" />
+  <span className="text-white leading-snug whitespace-normal">{item}</span>
+</li>
+
             ))}
           </ul>
 
