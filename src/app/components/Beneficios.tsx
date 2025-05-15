@@ -2,14 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const beneficios = [
-  "Más de 30 años de experiencia",
-  "Atención en Colón y alrededores",
-  "Servicios certificados y seguros",
-  "Materiales de calidad garantizada",
-  "Asistencia rápida y personalizada",
-];
-
 export default function Beneficios() {
   return (
     <section id="sobremi" className="py-24 px-6 bg-slate-900 text-center">
