@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Imagen de fondo animada con zoom suave */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero.jpg')" }}
+        style={{ backgroundImage: "url('/hero.webp')" }}
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 3, ease: "easeOut" }}

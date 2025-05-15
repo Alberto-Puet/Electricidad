@@ -17,7 +17,7 @@ export default function Reparaciones() {
   return (
     <section
       className="relative -mt-18 bg-cover bg-bottom min-h-screen text-white overflow-hidden"
-      style={{ backgroundImage: "url('/reparaciones-bg.jpg')" }}
+      style={{ backgroundImage: "url('/reparaciones-bg.webp')" }}
     >
       {/* Overlay responsivo */}
       <motion.div

@@ -6,6 +6,7 @@ import {
   FaPlug,
   FaTools,
   FaBolt,
+  FaWrench,
   FaCheckCircle,
 } from "react-icons/fa";
 import Image from "next/image";
@@ -15,7 +16,7 @@ const servicios = [
     icon: <FaPlug />,
     titulo: "Instalaciones",
     desc: "Instalaciones eléctricas seguras y certificadas para hogares, comercios y obras.",
-    imagen: "/instalaciones.jpg",
+    imagen: "/instalaciones.webp",
     ruta: "instalaciones",
     incluye: [
       "Instalación de tomas y llaves",
@@ -28,7 +29,7 @@ const servicios = [
     icon: <FaTools />,
     titulo: "Reparaciones",
     desc: "Reparación de artefactos, térmicas, cortocircuitos y problemas eléctricos comunes.",
-    imagen: "/reparaciones.jpg",
+    imagen: "/reparaciones.webp",
     ruta: "reparaciones",
     incluye: [
       "Artefactos eléctricos",
@@ -41,7 +42,7 @@ const servicios = [
     icon: <FaBolt />,
     titulo: "Bobinados",
     desc: "Bobinado profesional de motores eléctricos y mantenimiento preventivo.",
-    imagen: "/bobinados.jpg",
+    imagen: "/bobinados.webp",
     ruta: "bobinados",
     incluye: [
       "Bobinado de motores",

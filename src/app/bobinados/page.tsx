@@ -16,7 +16,7 @@ export default function Bobinados() {
   return (
     <section
       className="relative -mt-18 bg-cover bg-bottom min-h-screen text-white overflow-hidden"
-      style={{ backgroundImage: "url('/bobinados-bg.jpg')" }}
+      style={{ backgroundImage: "url('/bobinados-bg.webp')" }}
     >
       {/* Overlay responsivo */}
       <motion.div

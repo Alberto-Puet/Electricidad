@@ -8,7 +8,7 @@ export default function Zona() {
   return (
     <section
       className="relative py-28 px-6 bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/mapa.png')" }}
+      style={{ backgroundImage: "url('/mapa.webp')" }}
     >
       {/* Fondo blur oscuro */}
       <div className="absolute inset-0 backdrop-blur-xs bg-black/70 grayscale-75" />

@@ -17,7 +17,7 @@ export default function Instalaciones() {
   return (
     <section
       className="relative -mt-18 bg-cover bg-top md:bg-start min-h-screen text-white overflow-hidden"
-      style={{ backgroundImage: "url('/instalaciones-bg.jpg')" }}
+      style={{ backgroundImage: "url('/instalaciones-bg.webp')" }}
     >
       {/* Overlay responsivo */}
       <motion.div
