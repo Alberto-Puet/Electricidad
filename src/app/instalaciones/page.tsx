@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaPlug, FaCheckCircle } from "react-icons/fa";
 import Link from "next/link";
+import { useIsMobile } from "../../hoocks/useIsMobile"; // ajustá la ruta si es necesario
 
 const detalles = [
   "Instalación completa en hogares y comercios",
@@ -14,16 +15,19 @@ const detalles = [
 ];
 
 export default function Instalaciones() {
+  const isMobile = useIsMobile();
+
   return (
     <section
       className="relative -mt-18 bg-cover bg-top md:bg-start min-h-screen text-white overflow-hidden"
       style={{ backgroundImage: "url('/instalaciones-bg.webp')" }}
     >
-      {/* Overlay responsivo */}
+      {/* Overlay responsivo optimizado */}
       <motion.div
-        className="absolute inset-y-0 left-0 bg-black/70 h-full w-full md:w-[65%]"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
+        className="absolute inset-y-0 left-0 bg-black/70 h-full"
+        initial={{ width: 0 }}
+        whileInView={{ width: isMobile ? "100%" : "65%" }}
+        viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
         style={{ transformOrigin: "left" }}
       />
@@ -32,7 +36,8 @@ export default function Instalaciones() {
       <motion.div
         className="absolute inset-y-0 left-0 z-10 w-full md:w-[60%] flex items-center justify-center px-14"
         initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         <div className="max-w-3xl w-full text-center md:text-left">

@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaBolt, FaCheckCircle } from "react-icons/fa";
 import Link from "next/link";
+import { useIsMobile } from "../../hoocks/useIsMobile"; // ajustá la ruta si es necesario
 
 const detalles = [
   "Reemplazo de bobinas quemadas o desgastadas",
@@ -13,6 +14,8 @@ const detalles = [
 ];
 
 export default function Bobinados() {
+  const isMobile = useIsMobile();
+
   return (
     <section
       className="relative -mt-18 bg-cover bg-bottom min-h-screen text-white overflow-hidden"
@@ -20,9 +23,10 @@ export default function Bobinados() {
     >
       {/* Overlay responsivo */}
       <motion.div
-        className="absolute inset-y-0 left-0 bg-black/70 h-full w-full md:w-[65%]"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
+        className="absolute inset-y-0 left-0 bg-black/70 h-full"
+        initial={{ width: 0 }}
+        whileInView={{ width: isMobile ? "100%" : "65%" }}
+        viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
         style={{ transformOrigin: "left" }}
       />
@@ -31,7 +35,8 @@ export default function Bobinados() {
       <motion.div
         className="absolute inset-y-0 left-0 z-10 w-full md:w-[60%] flex items-center justify-center px-6"
         initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         <div className="max-w-3xl w-full text-center md:text-left">
@@ -46,13 +51,12 @@ export default function Bobinados() {
           <ul className="grid gap-5 justify-center sm:grid-cols-1 px-4 md:px-0 md:grid-cols-2 text-sm md:text-base">
             {detalles.map((item, i) => (
               <li
-  key={i}
-  className="flex items-start gap-3 text-left w-full"
->
-  <FaCheckCircle className="text-[#f09f0a] mt-1 shrink-0" />
-  <span className="text-white leading-snug whitespace-normal">{item}</span>
-</li>
-
+                key={i}
+                className="flex items-start gap-3 text-left w-full"
+              >
+                <FaCheckCircle className="text-[#f09f0a] mt-1 shrink-0" />
+                <span className="text-white leading-snug whitespace-normal">{item}</span>
+              </li>
             ))}
           </ul>
 

@@ -2,26 +2,44 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function Beneficios() {
+const containerVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
+export default function Experiencia() {
   return (
     <section id="sobremi" className="py-24 px-6 bg-slate-900 text-center">
-      <div className="max-w-3xl mx-auto">
+      <motion.div
+        className="max-w-3xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         <motion.p
           className="text-3xl font-bold mb-10 border-b-2 border-[#f09f0a] inline-block"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          variants={childVariants}
         >
           Años de Trayectoria
         </motion.p>
 
         <motion.p
           className="text-slate-300 text-lg leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          variants={childVariants}
         >
           Soy electricista con más de{" "}
           <strong>30 años de experiencia</strong> en instalaciones eléctricas,
@@ -31,18 +49,12 @@ export default function Beneficios() {
           calidad.
         </motion.p>
 
-        <motion.p
-          className="text-[#f09f0a] mt-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
+        <motion.p className="text-[#f09f0a] mt-6" variants={childVariants}>
           Mi prioridad es brindar soluciones confiables, cumpliendo con las
           normativas vigentes y respetando siempre los tiempos y necesidades de
           cada cliente.
         </motion.p>
-      </div>
+      </motion.div>
     </section>
   );
 }

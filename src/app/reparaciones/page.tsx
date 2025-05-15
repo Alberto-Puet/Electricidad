@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaTools, FaCheckCircle } from "react-icons/fa";
 import Link from "next/link";
+import { useIsMobile } from "../../hoocks/useIsMobile"; // ajustá la ruta si es necesario
 
 const detalles = [
   "Reparación de tomacorrientes y llaves dañadas",
@@ -14,25 +15,29 @@ const detalles = [
 ];
 
 export default function Reparaciones() {
+  const isMobile = useIsMobile();
+
   return (
     <section
       className="relative -mt-18 bg-cover bg-bottom min-h-screen text-white overflow-hidden"
       style={{ backgroundImage: "url('/reparaciones-bg.webp')" }}
     >
-      {/* Overlay responsivo */}
+      {/* Overlay responsivo optimizado */}
       <motion.div
-        className="absolute inset-y-0 left-0 bg-black/70 h-full w-full md:w-[65%]"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
+        className="absolute inset-y-0 left-0 bg-black/70 h-full"
+        initial={{ width: 0 }}
+        whileInView={{ width: isMobile ? "100%" : "65%" }}
+        viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
         style={{ transformOrigin: "left" }}
       />
 
       {/* Contenido */}
       <motion.div
-        className="absolute inset-y-0 left-0 z-10 w-full md:w-[60%] flex items-center justify-center px-6"
+        className="absolute inset-y-0 left-0 z-10 w-full md:w-[60%] flex items-center justify-center px-14"
         initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         <div className="max-w-3xl w-full text-center md:text-left">
@@ -59,7 +64,7 @@ export default function Reparaciones() {
           <div className="text-center md:text-left mt-10">
             <Link
               target="_blank"
-              href="https://wa.me/5493447448409?text=Hola%2C%20necesito%20reparar%20una%20falla%20el%C3%A9ctrica."
+              href="https://wa.me/5493447448409?text=Hola%2C%20necesito%20una%20reparaci%C3%B3n%20el%C3%A9ctrica.%20%C2%BFPodr%C3%ADas%20pasarme%20presupuesto%3F"
               className="inline-block bg-[#f09f0a] text-black font-semibold px-6 py-3 rounded hover:bg-[#ddba78] transition-all"
             >
               Consultar por este servicio

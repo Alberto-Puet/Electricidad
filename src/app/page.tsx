@@ -2,7 +2,7 @@
 "use client";
 import Hero from "./components/Hero";
 import Servicios from "./components/Servicios";
-import Beneficios from "./components/Beneficios";
+import Experiencia from "./components/Experiencia";
 import Zona from "./components/Zona";
 import CTAFinal from "./components/CTAFinal";
 
@@ -13,7 +13,7 @@ export default function HomePage() {
     <main>
       <Hero />
       <Servicios />
-      <Beneficios />
+      <Experiencia />
       <Zona />
       <CTAFinal />
     </main>
