@@ -6,11 +6,9 @@ import {
   FaPlug,
   FaTools,
   FaBolt,
-  FaWrench,
   FaCheckCircle,
 } from "react-icons/fa";
 import Image from "next/image";
-import { li } from "framer-motion/client";
 
 const servicios = [
   {

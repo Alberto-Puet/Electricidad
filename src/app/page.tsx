@@ -1,6 +1,5 @@
 // pages/index.tsx (Home)
 "use client";
-import { motion } from "framer-motion";
 import Hero from "./components/Hero";
 import Servicios from "./components/Servicios";
 import Beneficios from "./components/Beneficios";
