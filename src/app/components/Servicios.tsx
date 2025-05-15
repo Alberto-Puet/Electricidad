@@ -6,7 +6,6 @@ import {
   FaPlug,
   FaTools,
   FaBolt,
-  FaWrench,
   FaCheckCircle,
 } from "react-icons/fa";
 import Image from "next/image";
