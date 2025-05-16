@@ -13,7 +13,7 @@ export default function Hero() {
           alt="Fondo hero"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[72%] md:object-center"
         />
       </div>
 
