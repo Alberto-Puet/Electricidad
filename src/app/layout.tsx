@@ -1,24 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BotonWhatsappFlotante from "./components/BotonWhatsappFlotante";
+import { Roboto,  } from 'next/font/google'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+
+const roboto = Roboto({
   subsets: ["latin"],
+  weight: ["400", "700"]
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
-  
   title: "Raúl Puet – Electricista en Colón, Entre Ríos",
-  description: "Servicios de electricos en Colón, Entre Ríos. Instalaciones, reparaciones de artefactos, bobinados de motores. +30 años de experiencia.",
+  description:
+    "Servicios de electricos en Colón, Entre Ríos. Instalaciones, reparaciones de artefactos, bobinados de motores. +30 años de experiencia.",
 };
 
 export default function RootLayout({
@@ -27,10 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="es"  className={` ${roboto.className} `}>
+      <body >
         <Navbar />
         {children}
         <BotonWhatsappFlotante />

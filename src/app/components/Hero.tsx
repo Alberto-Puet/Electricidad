@@ -28,7 +28,7 @@ export default function Hero() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <p className="text-4xl md:text-5xl font-bold mb-4 text-white">
+        <p className="text-4xl md:text-5xl font-roboto font-bold mb-4 text-white">
           Raúl Puet
         </p>
 
