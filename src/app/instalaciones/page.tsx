@@ -25,7 +25,6 @@ export default function Instalaciones() {
                 src="/instalaciones-bg.webp"
                 alt="Fondo hero"
                 fill
-                priority
                 className="object-cover object-center"
               />
             </div>

@@ -24,7 +24,6 @@ export default function Reparaciones() {
                 src="/reparaciones-bg.webp"
                 alt="Fondo hero"
                 fill
-                priority
                 className="object-cover object-bottom"
               />
             </div>
