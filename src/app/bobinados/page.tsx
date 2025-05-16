@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaBolt, FaCheckCircle } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 const detalles = [
   "Reemplazo de bobinas quemadas o desgastadas",
@@ -16,8 +17,16 @@ export default function Bobinados() {
   return (
     <section
       className="relative -mt-18 bg-cover bg-bottom min-h-screen text-white overflow-hidden"
-      style={{ backgroundImage: "url('/bobinados-bg.webp')" }}
     >
+      <div className="absolute inset-0 -z-10">
+              <Image
+                src="/bobinados-bg.webp"
+                alt="Fondo hero"
+                fill
+                priority
+                className="object-cover object-bottom"
+              />
+            </div>
       {/* Overlay sin animación */}
       <div className="absolute inset-0 bg-black/70 h-full w-full" />
 

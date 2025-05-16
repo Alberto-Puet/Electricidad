@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaPlug, FaCheckCircle } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 const detalles = [
   "Instalación completa en hogares y comercios",
@@ -17,8 +18,17 @@ export default function Instalaciones() {
   return (
     <section
       className="relative -mt-18 bg-cover bg-top md:bg-start min-h-screen text-white overflow-hidden"
-      style={{ backgroundImage: "url('/instalaciones-bg.webp')" }}
+      // style={{ backgroundImage: "url('/instalaciones-bg.webp')" }}
     >
+      <div className="absolute inset-0 -z-10">
+              <Image
+                src="/instalaciones-bg.webp"
+                alt="Fondo hero"
+                fill
+                priority
+                className="object-cover object-center"
+              />
+            </div>
       {/* Overlay sin animación */}
       <div className="absolute inset-0 bg-black/70 h-full w-full" />
 

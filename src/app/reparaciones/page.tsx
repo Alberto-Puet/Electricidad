@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaTools, FaCheckCircle } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 const detalles = [
   "Reparación de tomacorrientes y llaves dañadas",
@@ -17,8 +18,16 @@ export default function Reparaciones() {
   return (
     <section
       className="relative -mt-18 bg-cover bg-bottom min-h-screen text-white overflow-hidden"
-      style={{ backgroundImage: "url('/reparaciones-bg.webp')" }}
     >
+      <div className="absolute inset-0 -z-10">
+              <Image
+                src="/reparaciones-bg.webp"
+                alt="Fondo hero"
+                fill
+                priority
+                className="object-cover object-bottom"
+              />
+            </div>
       {/* Overlay sin animación */}
       <div className="absolute inset-0 bg-black/70 h-full w-full" />
 

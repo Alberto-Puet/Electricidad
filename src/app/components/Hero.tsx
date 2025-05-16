@@ -1,15 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen -mt-18 flex items-center justify-center text-center px-6 overflow-hidden">
       {/* Imagen de fondo fija sin animación costosa */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero1.webp')" }}
-      />
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/hero1.webp"
+          alt="Fondo hero"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+      </div>
 
       {/* Overlay oscuro */}
       <div className="absolute inset-0 bg-black/80" />
@@ -22,7 +28,9 @@ export default function Hero() {
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <p className="text-4xl md:text-5xl font-bold mb-4 text-white">Raúl Puet</p>
+        <p className="text-4xl md:text-5xl font-bold mb-4 text-white">
+          Raúl Puet
+        </p>
 
         <h1 className="my-6 text-xl md:text-3xl font-semibold text-[#f09f0a]">
           Electricista en Colón, Entre Ríos

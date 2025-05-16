@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaTools } from "react-icons/fa";
 import { MdOutlineElectricBolt } from "react-icons/md";
+import Image from "next/image";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -26,8 +27,17 @@ export default function Zona() {
   return (
     <section
       className="relative py-28 px-6 bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/mapa.webp')" }}
+      
     >
+      <div className="absolute inset-0 -z-10">
+              <Image
+                src="/mapa.webp"
+                alt="Fondo hero"
+                fill
+                priority
+                className="object-cover object-center"
+              />
+            </div>
       {/* Capa de fondo */}
       <div className="absolute inset-0 backdrop-blur-xs bg-black/70 grayscale-75" />
 
