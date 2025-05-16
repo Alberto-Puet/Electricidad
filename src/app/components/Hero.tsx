@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Imagen de fondo fija sin animación costosa */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero.webp')" }}
+        style={{ backgroundImage: "url('/hero1.webp')" }}
       />
 
       {/* Overlay oscuro */}

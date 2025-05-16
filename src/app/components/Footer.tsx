@@ -25,7 +25,8 @@ export default function Footer() {
       </div>
 
       <div className="mt-10 text-center text-sm text-slate-500">
-        © {new Date().getFullYear()} Electricista en Colón. Todos los derechos reservados.
+        © {new Date().getFullYear()} Raúl Puet. Electricista en Colón, Entre Ríos. Todos los derechos reservados.
+
       </div>
     </footer>
   );
