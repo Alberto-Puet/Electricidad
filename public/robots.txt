@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://raulpuet.com
+
+# Sitemaps
+Sitemap: https://raulpuet.com/sitemap.xml
