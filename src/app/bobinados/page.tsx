@@ -61,7 +61,7 @@ export default function Bobinados() {
           <div className="text-center mt-10">
             <Link
               target="_blank"
-              href="https://wa.me/5493447448409?text=Hola%2C%20necesito%20bobinar%20un%20motor."
+              href="https://wa.me/5493447448409"
               className="inline-block bg-[#f09f0a] text-black font-semibold px-6 py-3 rounded hover:bg-[#ddba78] transition-all"
             >
               Consultar por este servicio
